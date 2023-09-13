@@ -1,36 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BMI Calculator</title>
 </head>
-<body bgcolor="skyblue">
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <center>
-    <table bgcolor="black" width="400px" height="100px">
-      <tr><th>
-  <font color="white">
+<body id="bd">
+  <style>
+    #bd{
+      background: skyblue;
+    }
+  #box{
+    position:absolute;
+    top: 35%;
+    left: 32%;
+    transform:translate(-50%-50%);
+    padding: 15px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    height: 400px;
+    width: 700px;
+   
+  }
+  #fonts{
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    
+  }
+  #button{
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 600px) {
+    #bd{
+      background: rgb(0, 0, 0);
+    }
+  #box{
+    position:static;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%-50%);
+    padding: 15px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    height: 400px;
+    width: 700px;
+  }
+  #fonts{
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    
+  }
+  #button{
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+}
+  </style>
+  
+    <div id="box">
+      
+  <font id="fonts"><center>
   <h1>BMI Calculator</h1>
-  </font>
-  <font color="white">
-  <label for="weight">Weight (kg):</label></font>
-  <font color="white">
+  
+  <label for="weight">Weight (kg):</label>
   <input type="number" id="weight" ><br><br>
+ 
+  <label for="height">Height (cm):</label>
   
-  <label for="height">Height (cm):</label></font>
-  <input type="number" id="height" "><br><br>
+  <input type="number" id="height"><br><br>
   
-  <button  onclick="calculateBMI()"><font color="black"> Calculate BMI</font></button>
-  <font color="white">
-  <p id="bmiResult"></p></th></tr></table></font>
+  <button id="button" onclick="calculateBMI()">  Calculate BMI</button>
   
+  <p id="bmiResult"></p>
+ </center>
+  </font>
+</div>
   <script>
     function calculateBMI() {
       const weight = parseFloat(document.getElementById("weight").value);
@@ -59,6 +111,6 @@
       }
     }
   </script>
-  </center>
 </body>
 </html>
+
